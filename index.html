@@ -939,6 +939,10 @@ function addMessage(text, sender) {
     if (["stats","github stats","commits","followers","repositories","profile stats"].some(k => lower.includes(k)))
         return "📊 My GitHub stats: 10 repositories, 7 followers, and 150 commits this year.";
 
+    // === Stats ===
+    if (["stats","github stats","commits","your are so nice","how it's going","how are you"].some(k => lower.includes(k)))
+        return "📊 I'm fine, Doing good.";    
+
     // === Portfolio Navigation ===
     if (["home","header","menu","navigation","top","start page","go to home"].some(k => lower.includes(k)))
         return "🏠 Use the header navigation to jump between About, Skills, Projects, and Resume sections.";
@@ -967,6 +971,7 @@ function addMessage(text, sender) {
         document.getElementById('resume').scrollIntoView({ behavior: 'smooth' });
         return "📄 Scrolling to the Resume section...";
     }
+
 
     // === Fun / Extras (keep only once, merged below) ===
 
