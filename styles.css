@@ -28,20 +28,192 @@
 
 /* Light mode variables */
 .light-mode {
-    --primary-color: #0d0d0d;
-    --secondary-color: #2d8b7f;
-    --accent-color: #2d8b7f;
-    --accent2: #f4f6f9;
-    --accent3: #e5eef7;
-    --accent4: #b8613f;
-    --accent-blue: #1a5fa0;
-    --accent-green: #2d8b7f;
-    --accent-orange: #a05432;
-    --bg-color: #f8fafb;
-    --bg-gradient: linear-gradient(135deg, #f8fafb 0%, #eef2f8 50%, #e5f0eb 100%);
-    --card-bg: rgba(255,255,255,0.95);
-    --glass-bg: rgba(45,139,127,0.08);
-    --shadow: 0 2px 8px 0 rgba(45,139,127,0.1), 0 1px 4px 0 rgba(0,0,0,0.08);
+    --primary-color: #050505;
+    --secondary-color: #1a6b63;
+    --accent-color: #1a6b63;
+    --accent2: #1a6b63;
+    --accent3: #e0ebf5;
+    --accent4: #9d5237;
+    --accent-blue: #0f4a7a;
+    --accent-green: #1a6b63;
+    --accent-orange: #8a4a2e;
+    --bg-color: #ffffff;
+    --bg-gradient: linear-gradient(135deg, #ffffff 0%, #f5f8fb 50%, #f0f5f8 100%);
+    --card-bg: rgba(255,255,255,1.0);
+    --glass-bg: rgba(26,107,99,0.12);
+    --shadow: 0 2px 8px 0 rgba(26,107,99,0.12), 0 1px 3px 0 rgba(0,0,0,0.1);
+}
+
+/* Light mode body styling */
+.light-mode body {
+    background: linear-gradient(135deg, #ffffff 0%, #f5f8fb 50%, #f0f5f8 100%);
+}
+
+/* Light mode header styling */
+.light-mode .professional-header {
+    background: rgba(255,255,255,1.0);
+    border-bottom: 1px solid #dfe8f0;
+    box-shadow: 0 2px 8px rgba(26,107,99,0.1);
+}
+
+/* Light mode navigation links */
+.light-mode .nav-link {
+    color: #050505;
+}
+
+.light-mode .nav-link:hover {
+    background: rgba(26,107,99,0.12);
+    color: #9d5237;
+}
+
+.light-mode .nav-link.nav-cta {
+    background: linear-gradient(135deg, #9d5237, #0f4a7a);
+    color: #ffffff;
+}
+
+.light-mode .nav-link.nav-cta:hover {
+    background: linear-gradient(135deg, #0f4a7a, #9d5237);
+}
+
+/* Light mode header socials */
+.light-mode .header-social-link {
+    background: rgba(26,107,99,0.08);
+    color: #050505;
+    border-color: #1a6b63;
+}
+
+.light-mode .header-social-link:hover {
+    background: #1a6b63;
+    color: #ffffff;
+    border-color: #1a6b63;
+}
+
+/* Light mode logo */
+.light-mode .logo-text {
+    color: #1a6b63;
+    background: linear-gradient(135deg, #1a6b63, #050505);
+}
+
+.light-mode .logo-subtitle {
+    color: #050505;
+}
+
+/* Light mode sections & content */
+.light-mode section {
+    background: rgba(255,255,255,1.0);
+    border-color: #dfe8f0;
+    box-shadow: 0 2px 8px rgba(26,107,99,0.08);
+}
+
+.light-mode h1, .light-mode h2, .light-mode h3, .light-mode h4, .light-mode h5, .light-mode h6 {
+    color: #050505;
+}
+
+.light-mode p, .light-mode li, .light-mode a {
+    color: #2a2a2a;
+}
+
+.light-mode a {
+    color: #1a6b63;
+}
+
+.light-mode a:hover {
+    color: #9d5237;
+}
+
+/* Light mode skill tags */
+.light-mode .skill-tag {
+    background: rgba(26,107,99,0.12);
+    color: #1a6b63;
+    border-color: #1a6b63;
+}
+
+.light-mode .skill-tag:hover {
+    background: #1a6b63;
+    color: #ffffff;
+    border-color: #1a6b63;
+}
+
+.light-mode .skill-tag.expert {
+    background: rgba(157,82,55,0.2);
+    color: #9d5237;
+    border-color: #9d5237;
+}
+
+.light-mode .skill-tag.expert:hover {
+    background: #9d5237;
+    color: #ffffff;
+}
+
+/* Light mode project cards */
+.light-mode .premium-project {
+    background: rgba(255,255,255,1.0);
+    border-color: #dfe8f0;
+    box-shadow: 0 2px 8px rgba(26,107,99,0.08);
+}
+
+.light-mode .premium-project:hover {
+    box-shadow: 0 4px 12px rgba(26,107,99,0.12);
+}
+
+/* Light mode buttons */
+.light-mode .cta-primary {
+    background: linear-gradient(135deg, #1a6b63, #0f4a7a);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(26,107,99,0.15);
+}
+
+.light-mode .cta-primary:hover {
+    box-shadow: 0 6px 16px rgba(26,107,99,0.2);
+}
+
+.light-mode .cta-secondary {
+    color: #1a6b63;
+    border-color: #1a6b63;
+}
+
+.light-mode .cta-secondary:hover {
+    background: rgba(26,107,99,0.12);
+    color: #1a6b63;
+}
+
+/* Light mode footer */
+.light-mode .professional-footer {
+    background: rgba(255,255,255,1.0);
+    border-top: 1px solid #dfe8f0;
+    box-shadow: 0 -2px 8px rgba(26,107,99,0.08);
+}
+
+.light-mode .footer-section h3 {
+    color: #050505;
+}
+
+.light-mode .footer-section ul li a {
+    color: #2a2a2a;
+}
+
+.light-mode .footer-section ul li a:hover {
+    color: #9d5237;
+}
+
+.light-mode .footer-socials a {
+    background: rgba(26,107,99,0.12);
+    color: #1a6b63;
+    border-color: #1a6b63;
+}
+
+.light-mode .footer-socials a:hover {
+    background: #1a6b63;
+    color: #ffffff;
+    border-color: #1a6b63;
+}
+
+.light-mode .footer-text {
+    color: #2a2a2a;
+}
+
+.light-mode .footer-divider {
+    background: linear-gradient(90deg, transparent, #1a6b63, transparent);
 }
 
 /* === Professional Header === */
