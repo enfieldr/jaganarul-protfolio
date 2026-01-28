@@ -28,7 +28,7 @@
 
 /* Light mode variables */
 .light-mode {
-    --primary-color: #2a3d52;
+    --primary-color: #0d0d0d;
     --secondary-color: #2d8b7f;
     --accent-color: #2d8b7f;
     --accent2: #f4f6f9;
@@ -39,9 +39,9 @@
     --accent-orange: #a05432;
     --bg-color: #f8fafb;
     --bg-gradient: linear-gradient(135deg, #f8fafb 0%, #eef2f8 50%, #e5f0eb 100%);
-    --card-bg: rgba(255,255,255,0.92);
-    --glass-bg: rgba(45,139,127,0.06);
-    --shadow: 0 2px 8px 0 rgba(45,139,127,0.08), 0 1px 4px 0 rgba(0,0,0,0.06);
+    --card-bg: rgba(255,255,255,0.95);
+    --glass-bg: rgba(45,139,127,0.08);
+    --shadow: 0 2px 8px 0 rgba(45,139,127,0.1), 0 1px 4px 0 rgba(0,0,0,0.08);
 }
 
 /* === Professional Header === */
