@@ -288,165 +288,78 @@
 
     <main>
         <!-- About Section -->
-        <section id="about" class="about-premium">
-            <div class="about-hero">
-                <div class="about-content">
-                    <h1 class="about-headline">Jaganarul</h1>
-                    <p class="professional-tagline">Java & AI Developer | Core Banking Systems Specialist</p>
-                    <p class="about-subtitle">Building intelligent, scalable financial solutions with Java, AI, and modern architecture</p>
-                    
-                    <p class="aboutMe">
-                        I'm Jaganarul, a Computer Science graduate with deep expertise in Java backend development, Artificial Intelligence, and core banking systems. My passion lies in creating secure, scalable financial solutions that combine cutting-edge technology with business impact.
-                    </p>
-                    
-                    <div class="key-highlights">
-                        <div class="highlight-item">
-                            <i class="fa-solid fa-code"></i>
-                            <h4>Full-Stack Expertise</h4>
-                            <p>Java backend, Spring Boot, REST APIs, Docker containerization</p>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fa-solid fa-brain"></i>
-                            <h4>AI Integration</h4>
-                            <p>LLaMA 3.1, AI chatbots, intelligent systems, machine learning</p>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fa-solid fa-building"></i>
-                            <h4>Banking Systems</h4>
-                            <p>Temenos T24 Certified, core banking architecture, fintech</p>
-                        </div>
-                    </div>
-                    
-                    <div class="cta-group">
-                        <a href="#contact" class="cta-primary"><i class="fa-solid fa-envelope"></i> Let's Connect</a>
-                        <a href="jaganarul_resume 1.pdf" download class="cta-secondary"><i class="fa-solid fa-download"></i> Download Resume</a>
-                    </div>
+        <section id="about">
+            <div class="nameContainer">
+                <h1>Jaganarul</h1>
+                <p class="darkerText">I'm A Java | AI | Full Stack Developer</p>
+            </div>
+            <div class="statsContainer">
+                <div class="imgContainer">
+                    <img src="jaganprofile.png" alt="Jaganarul profile photo" />
                 </div>
-                
-                <div class="profile-section">
-                    <div class="imgContainer">
-                        <img src="jaganprofile.png" alt="Jaganarul profile photo" />
+                <div class="stats darkerText">
+                    <div>
+                        <i class="fa-solid fa-star"></i>
+                        <p>10 GitHub Repositories</p>
                     </div>
-                    <div class="stats darkerText">
-                        <div class="stat-box">
-                            <h3>6+</h3>
-                            <p>AI Projects</p>
-                        </div>
-                        <div class="stat-box">
-                            <h3>10+</h3>
-                            <p>Repositories</p>
-                        </div>
-                        <div class="stat-box">
-                            <h3>150+</h3>
-                            <p>Commits</p>
-                        </div>
-                        <div class="stat-box">
-                            <h3>4+</h3>
-                            <p>Certifications</p>
-                        </div>
+                    <div>
+                        <i class="fa-brands fa-github"></i>
+                        <p>7 Followers</p>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-arrow-trend-up"></i>
+                        <p>110 Commits This year</p>
                     </div>
                 </div>
             </div>
+            <p class="aboutMe">
+             I'm Jaganarul, a Computer Science graduate specializing in Java backend development and Artificial Intelligence, with expertise in Spring Boot, Maven, Docker, Sql, GitHub. I’ve built intelligent systems including AI-powered chatbots and a Cold Mail Generator using LLaMA 3.1, showcasing my ability to integrate AI moduls. Certified in Temenos T24 Transact Core Banking and currently upskilling with T24 fundamentals, I aim to AI innovation and core banking systems to build secure, scalable, and future-ready financial solutions..
+            <a href="mailto:jaganarul179@gmail.com" class="outreach darkerText"> 
+                <!-- From Uiverse.io by adamgiebl --> 
+<button>
+  <div class="svg-wrapper-1">
+    <div class="svg-wrapper">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        width="24"
+        height="24"
+      >
+        <path fill="none" d="M0 0h24v24H0z"></path>
+        <path
+          fill="currentColor"
+          d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
+        ></path>
+      </svg>
+    </div>
+  </div>
+  <span>Email</span>
+</button>
+
+            </a>
         </section>
 
         <!-- Skills Section -->
-        <section id="skills" class="skills-premium">
-            <h2>Technical Expertise</h2>
-            
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3><i class="fa-solid fa-terminal"></i> Backend & Core Banking</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag expert">Java</span>
-                        <span class="skill-tag expert">Spring Boot</span>
-                        <span class="skill-tag expert">Maven</span>
-                        <span class="skill-tag expert">Temenos T24</span>
-                        <span class="skill-tag proficient">REST APIs</span>
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h3><i class="fa-solid fa-brain"></i> AI & Machine Learning</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag expert">LLaMA Integration</span>
-                        <span class="skill-tag expert">AI Chatbots</span>
-                        <span class="skill-tag proficient">NLP</span>
-                        <span class="skill-tag proficient">AI Models</span>
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h3><i class="fa-solid fa-database"></i> Database & Infrastructure</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag expert">MySQL</span>
-                        <span class="skill-tag expert">SQL</span>
-                        <span class="skill-tag expert">Docker</span>
-                        <span class="skill-tag proficient">Container Architecture</span>
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h3><i class="fa-brands fa-github"></i> Version Control & Collaboration</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag expert">Git</span>
-                        <span class="skill-tag expert">GitHub</span>
-                        <span class="skill-tag proficient">Agile/Scrum</span>
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h3><i class="fa-solid fa-globe"></i> Frontend & Web</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag proficient">HTML5</span>
-                        <span class="skill-tag proficient">CSS3</span>
-                        <span class="skill-tag proficient">JavaScript</span>
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h3><i class="fa-solid fa-shield-halved"></i> Security & Other</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag proficient">Cybersecurity</span>
-                        <span class="skill-tag proficient">Encryption</span>
-                        <span class="skill-tag proficient">System Design</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="certifications">
-                <h3>📜 Certifications & Achievements</h3>
-                <div class="cert-list">
-                    <div class="cert-item">
-                        <i class="fa-solid fa-award"></i>
-                        <div>
-                            <h4>Temenos T24 Certified Developer</h4>
-                            <p>Core Banking Systems Expertise</p>
-                        </div>
-                    </div>
-                    <div class="cert-item">
-                        <i class="fa-solid fa-award"></i>
-                        <div>
-                            <h4>Java Masterclass 2025</h4>
-                            <p>Advanced Java Development</p>
-                        </div>
-                    </div>
-                    <div class="cert-item">
-                        <i class="fa-solid fa-award"></i>
-                        <div>
-                            <h4>Git/GitHub Fundamentals</h4>
-                            <p>Version Control & Collaboration</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <section id="skills">
+            <p class="darkerText headerText">Skills</p>
+            <ul class="skills-list">
+                <li><b><i class="fa-brands fa-java"></i></b>Java</li>
+                <li><i class="fa-solid fa-t"></i>Temenos T24</li>
+                <li><i class="fa-light fa-hexagon-nodes-bolt"></i> Artificial Intelligence</li>
+                <li><i class="fa-brands fa-git-alt"></i> Git & GitHub</li>
+                <li><i class="fa-solid fa-database"></i> MYSQL</li>
+                <li><i class="fa-brands fa-html5"></i> HTML</li>
+                <li><i class="fa-brands fa-css3-alt"></i> CSS</li>
+                <li><i class="fa-solid fa-s"></i>SpringBoot</li>
+                <li><i class="fa-brands fa-docker"></i>Docker</li>
+                <li><i class="fa-solid fa-m"></i>Maven</li>
+                <li><i class="fa-solid fa-shield-halved"></i> Cyber Security </li>
+            </ul>
         </section>
 
         <!-- Projects Section -->
-        <section id="projects" class="projectContainer projects-premium">
-            <div class="section-header">
-                <h2>Featured Projects</h2>
-                <p class="section-subtitle">End-to-end solutions demonstrating technical expertise in banking systems, AI integration, and scalable architecture</p>
-            </div>
+        <section id="projects" class="projectContainer">
+            <p class="darkerText headerText">Latest projects</p>
 
             <!-- Cyber Security Project -->
             <div class="projectItem">
