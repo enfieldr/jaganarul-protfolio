@@ -2090,6 +2090,16 @@ button:active {
     background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.1), transparent);
     border: 2px solid currentColor;
     overflow: hidden;
+    cursor: pointer;
+    transition: all var(--transition);
+}
+
+.speedometer:hover {
+    transform: scale(1.08);
+}
+
+.speedometer:active {
+    transform: scale(0.96);
 }
 
 .speedometer-needle {
