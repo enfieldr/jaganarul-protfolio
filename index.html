@@ -1251,6 +1251,17 @@ chatbotToggle.onclick = () => {
         speedometer.addEventListener('mouseleave', () => {
             link.classList.remove('show-score');
         });
+
+        // Click to open profile links
+        speedometer.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            const platform = link.dataset.platform;
+            const profileUrl = platform === 'hackerrank' 
+                ? 'https://www.hackerrank.com/jaganarul179'
+                : 'https://leetcode.com/jaganarul179';
+            window.open(profileUrl, '_blank');
+        });
     });
     </script>
 
