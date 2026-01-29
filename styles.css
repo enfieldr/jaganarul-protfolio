@@ -11,6 +11,8 @@
     --accent-green: #2d8b7f;
     --accent-orange: #b8613f;
     --accent-purple: #5a6ba8;
+    --hackerrank-color: #01ca42;
+    --leetcode-color: #ffa500;
     
     /* Dark Mode Background */
     --bg-color: #0f1419;
@@ -42,6 +44,8 @@
     --card-bg: rgba(255,255,255,1.0);
     --glass-bg: rgba(205, 211, 211, 0.12);
     --shadow: 0 2px 8px 0 rgba(18, 244, 221, 0.12), 0 1px 3px 0 rgba(26,107,99,0.08);
+    --hackerrank-color: #01ca42;
+    --leetcode-color: #ff6600;
 }
 
 /* Light mode body styling */
@@ -2012,6 +2016,206 @@ button:active {
     flex-direction: column;
     align-items: center;
     gap: 32px;
+}
+
+/* Coding Profiles Links */
+.coding-profiles {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.profile-link {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 28px;
+    text-decoration: none;
+    border-radius: var(--radius);
+    transition: all var(--transition);
+    border: 2px solid;
+    background: var(--card-bg);
+    min-width: 160px;
+}
+
+.hackerrank-link {
+    border-color: var(--hackerrank-color);
+    color: var(--hackerrank-color);
+}
+
+.hackerrank-link:hover {
+    background: rgba(1, 202, 66, 0.1);
+    box-shadow: 0 0 20px rgba(1, 202, 66, 0.3);
+    transform: translateY(-4px);
+}
+
+.leetcode-link {
+    border-color: var(--leetcode-color);
+    color: var(--leetcode-color);
+}
+
+.leetcode-link:hover {
+    background: rgba(255, 165, 0, 0.1);
+    box-shadow: 0 0 20px rgba(255, 165, 0, 0.3);
+    transform: translateY(-4px);
+}
+
+.link-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+.link-content i {
+    font-size: 2em;
+}
+
+/* Speedometer Indicator */
+.speedometer {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 12px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.1), transparent);
+    border: 2px solid currentColor;
+    overflow: hidden;
+}
+
+.speedometer-needle {
+    position: absolute;
+    width: 8px;
+    height: 45px;
+    background: linear-gradient(to bottom, 
+        rgba(255,255,255,0.8) 0%,
+        currentColor 30%,
+        rgba(255,255,255,0.6) 100%);
+    border-radius: 4px;
+    transform-origin: center 45px;
+    box-shadow: 0 0 15px currentColor;
+    animation: speedometerSweep 3s ease-in-out infinite;
+}
+
+.hackerrank-link .speedometer-needle {
+    background: linear-gradient(to bottom, 
+        rgba(255,255,255,0.9) 0%,
+        var(--hackerrank-color) 30%,
+        rgba(1,202,66,0.6) 100%);
+    box-shadow: 0 0 20px var(--hackerrank-color), 0 0 40px rgba(1,202,66,0.4);
+}
+
+.leetcode-link .speedometer-needle {
+    background: linear-gradient(to bottom, 
+        rgba(255,255,255,0.9) 0%,
+        var(--leetcode-color) 30%,
+        rgba(255,165,0,0.6) 100%);
+    box-shadow: 0 0 20px var(--leetcode-color), 0 0 40px rgba(255,165,0,0.4);
+}
+
+.speedometer-label {
+    position: absolute;
+    bottom: 8px;
+    font-size: 0.7em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    z-index: 2;
+    transition: opacity var(--transition);
+}
+
+.speedometer-score {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    font-weight: 700;
+    opacity: 0;
+    transition: opacity var(--transition);
+    z-index: 3;
+}
+
+.speedometer-score .score-value {
+    font-size: 2em;
+    line-height: 1;
+    font-weight: 800;
+    margin-bottom: 6px;
+    background: linear-gradient(135deg, currentColor, rgba(255,255,255,0.6));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.speedometer-score .score-details {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    text-align: center;
+}
+
+.speedometer-score .detail-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.speedometer-score .detail-label {
+    font-size: 0.45em;
+    opacity: 0.85;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    font-weight: 600;
+}
+
+.profile-link.show-score .speedometer-score {
+    opacity: 1;
+    animation: scorePopIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.profile-link.show-score .speedometer-needle {
+    opacity: 0.15;
+    animation: none;
+}
+
+.profile-link.show-score .speedometer-label {
+    opacity: 0;
+}
+
+@keyframes scorePopIn {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.6);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@keyframes speedometerSweep {
+    0% {
+        transform: rotate(-135deg);
+    }
+    50% {
+        transform: rotate(135deg);
+    }
+    100% {
+        transform: rotate(-135deg);
+    }
 }
 
 .stat-box {

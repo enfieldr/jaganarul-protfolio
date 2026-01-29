@@ -324,6 +324,30 @@
                 </div>
                 
                 <div class="profile-section">
+                    <div class="coding-profiles">
+                        <button class="profile-link hackerrank-link" data-platform="hackerrank" data-score="5" data-percentile="95" data-challenges="180" onclick="return false;">
+                            <div class="link-content">
+                                <i class="fa-brands fa-hackerrank"></i>
+                                <span>HackerRank</span>
+                            </div>
+                            <div class="speedometer">
+                                <div class="speedometer-needle"></div>
+                                <span class="speedometer-label">Score</span>
+                                <div class="speedometer-score"></div>
+                            </div>
+                        </button>
+                        <button class="profile-link leetcode-link" data-platform="leetcode" data-score="200" data-percentile="88" data-challenges="120" onclick="return false;">
+                            <div class="link-content">
+                                <i class="fa-solid fa-code"></i>
+                                <span>LeetCode</span>
+                            </div>
+                            <div class="speedometer">
+                                <div class="speedometer-needle"></div>
+                                <span class="speedometer-label">Score</span>
+                                <div class="speedometer-score"></div>
+                            </div>
+                        </button>
+                    </div>
                     <div class="imgContainer">
                         <img src="jaganprofile.png" alt="Jaganarul profile photo" />
                     </div>
@@ -408,7 +432,7 @@
                     <div class="skill-tags">
                         <span class="skill-tag proficient">Cybersecurity</span>
                         <span class="skill-tag proficient">Encryption</span>
-                        <span class="skill-tag proficient">Embedded Systems</span>
+                        <span class="skill-tag proficient">fEmbedded Systems</span>
                     </div>
                 </div>
             </div>
@@ -1190,6 +1214,44 @@ chatbotToggle.onclick = () => {
         setTimeout(() => addMessage(botReply(msg), 'bot'), 500);
         chatbotInput.value = '';
     };
+
+    // === Speedometer Performance Display ===
+    const profileLinks = document.querySelectorAll('.profile-link');
+    profileLinks.forEach(link => {
+        const speedometer = link.querySelector('.speedometer');
+        
+        speedometer.addEventListener('mouseenter', (e) => {
+            const platform = link.dataset.platform;
+            const score = link.dataset.score;
+            const percentile = link.dataset.percentile;
+            const challenges = link.dataset.challenges;
+            
+            link.classList.add('show-score');
+            const scoreDiv = link.querySelector('.speedometer-score');
+            
+            if (platform === 'hackerrank') {
+                scoreDiv.innerHTML = `
+                    <div class="score-value">${score}⭐</div>
+                    <div class="score-details">
+                        <div class="detail-item"><span class="detail-label">Stars</span></div>
+                        <div class="detail-item"><span class="detail-label">${percentile}th %ile</span></div>
+                    </div>
+                `;
+            } else {
+                scoreDiv.innerHTML = `
+                    <div class="score-value">${score}</div>
+                    <div class="score-details">
+                        <div class="detail-item"><span class="detail-label">Points</span></div>
+                        <div class="detail-item"><span class="detail-label">${percentile}th %ile</span></div>
+                    </div>
+                `;
+            }
+        });
+        
+        speedometer.addEventListener('mouseleave', () => {
+            link.classList.remove('show-score');
+        });
+    });
     </script>
 
     <!-- ...existing code... -->
