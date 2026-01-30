@@ -720,7 +720,7 @@ section::before {
     border-radius: 50%;
 }
 
-/* Glassmorphism Open to Work Badge */
+/* Glassmorphism Open to Work Badge - Desktop */
 .open-to-work-badge {
     position: absolute;
     top: -240px;
@@ -752,6 +752,18 @@ section::before {
     outline: none;
 }
 
+/* Tablet (768px and below) */
+@media (max-width: 768px) {
+    .open-to-work-badge {
+        top: -10px;
+        right: -120px;
+        width: 750px;
+        height: 75px;
+        font-size: 10px;
+        gap: 4px;
+    }
+}
+
 .open-to-work-badge::before {
     content: '';
     position: absolute;
@@ -779,6 +791,23 @@ section::before {
     line-height: 1.2;
     text-align: center;
     letter-spacing: 0.3px;
+}
+
+/* Mobile (480px and below) */
+@media (max-width: 480px) {
+    .open-to-work-badge {
+        top: -50px;
+        right: -120px;
+        width: 65px;
+        height: 65px;
+        font-size: 9px;
+        gap: 3px;
+    }
+    
+    .status-dot {
+        width: 6px;
+        height: 6px;
+    }
 }
 
 .open-to-work-badge:hover {
