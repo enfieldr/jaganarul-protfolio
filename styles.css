@@ -40,24 +40,24 @@
     --accent-green: #1a6b63;
     --accent-orange: #8a4a2e;
     --bg-color: #ffffff;
-    --bg-gradient: linear-gradient(135deg, #ffffff 0%, #f5f8fb 50%, #f0f5f8 100%);
+    --bg-gradient: linear-gradient(135deg, #ffffff 0%, #ffffff 50%, #ffffff 100%);
     --card-bg: rgba(255,255,255,1.0);
-    --glass-bg: rgba(205, 211, 211, 0.12);
-    --shadow: 0 2px 8px 0 rgba(18, 244, 221, 0.12), 0 1px 3px 0 rgba(26,107,99,0.08);
+    --glass-bg: rgba(255,255,255,0.95);
+    --shadow: none;
     --hackerrank-color: #01ca42;
     --leetcode-color: #ff6600;
 }
 
 /* Light mode body styling */
 .light-mode body {
-    background: linear-gradient(135deg, #ffffff 0%, #f5f8fb 50%, #f0f5f8 100%);
+    background: #ffffff;
 }
 
 /* Light mode header styling */
 .light-mode .professional-header {
     background: rgba(255,255,255,1.0);
     border-bottom: 1px solid #dfe8f0;
-    box-shadow: 0 2px 8px rgba(26,107,99,0.1);
+    box-shadow: none;
 }
 
 /* Light mode navigation links */
@@ -66,7 +66,7 @@
 }
 
 .light-mode .nav-link:hover {
-    background: rgba(227, 230, 230, 0.12);
+    background: none;
     color: #9d5237;
 }
 
@@ -83,7 +83,7 @@
 .light-mode .header-social-link {
     background: rgba(245, 247, 247, 0.08);
     color: #050505;
-    border-color: #1a6b63;
+    border-color: #979898;
 }
 
 .light-mode .header-social-link:hover {
@@ -95,7 +95,7 @@
 /* Light mode logo */
 .light-mode .logo-text {
     color: #1a6b63;
-    background: linear-gradient(135deg, #1a6b63, #eae8e8);
+    background: linear-gradient(135deg, #1a6b63, #141313);
 }
 
 .light-mode .logo-subtitle {
@@ -106,15 +106,15 @@
 .light-mode section {
     background: rgba(255,255,255,1.0);
     border-color: #dfe8f0;
-    box-shadow: 0 2px 8px rgba(234, 235, 235, 0.08);
+    box-shadow: none;
 }
 
 .light-mode h1, .light-mode h2, .light-mode h3, .light-mode h4, .light-mode h5, .light-mode h6 {
-    color: #050505;
+    color: #fcfafa;
 }
 
 .light-mode p, .light-mode li, .light-mode a {
-    color: #2a2a2a;
+    color: #030303;
 }
 
 .light-mode a {
@@ -127,7 +127,7 @@
 
 /* Light mode skill tags */
 .light-mode .skill-tag {
-    background: rgba(26,107,99,0.12);
+    background: none;
     color: #1a6b63;
     border-color: #1a6b63;
 }
@@ -139,7 +139,7 @@
 }
 
 .light-mode .skill-tag.expert {
-    background: rgba(157,82,55,0.2);
+    background: rgba(228, 225, 224, 0.2);
     color: #9d5237;
     border-color: #9d5237;
 }
@@ -153,22 +153,22 @@
 .light-mode .premium-project {
     background: rgba(255,255,255,1.0);
     border-color: #dfe8f0;
-    box-shadow: 0 2px 8px rgba(26,107,99,0.08);
+    box-shadow: none;
 }
 
 .light-mode .premium-project:hover {
-    box-shadow: 0 4px 12px rgba(26,107,99,0.12);
+    box-shadow: none;
 }
 
 /* Light mode buttons */
 .light-mode .cta-primary {
     background: linear-gradient(135deg, #1a6b63, #0f4a7a);
     color: #ffffff;
-    box-shadow: 0 4px 12px rgba(26,107,99,0.15);
+    box-shadow: none;
 }
 
 .light-mode .cta-primary:hover {
-    box-shadow: 0 6px 16px rgba(26,107,99,0.2);
+    box-shadow: none;
 }
 
 .light-mode .cta-secondary {
@@ -185,7 +185,7 @@
 .light-mode .professional-footer {
     background: rgba(255,255,255,1.0);
     border-top: 1px solid #dfe8f0;
-    box-shadow: 0 -2px 8px rgba(26,107,99,0.08);
+    box-shadow: none;
 }
 
 .light-mode .footer-section h3 {
@@ -213,11 +213,73 @@
 }
 
 .light-mode .footer-text {
-    color: #2a2a2a;
+    color: #e4dfdf;
 }
 
 .light-mode .footer-divider {
     background: linear-gradient(90deg, transparent, #1a6b63, transparent);
+}
+
+/* Light mode shadow overrides - remove dark shadows */
+.light-mode header h2 {
+    text-shadow: none;
+}
+
+.light-mode nav a:hover,
+.light-mode nav a.darkerText {
+    box-shadow: none;
+}
+
+.light-mode .headerText {
+    text-shadow: none;
+}
+
+.light-mode .nameContainer h1 {
+    text-shadow: none;
+}
+
+.light-mode .aboutMe {
+    box-shadow: none;
+}
+
+.light-mode .imgContainer {
+    box-shadow: none;
+}
+
+.light-mode .stats > div {
+    box-shadow: none;
+}
+
+.light-mode .professional-header {
+    box-shadow: none;
+}
+
+.light-mode .skills-list li {
+    box-shadow: none;
+}
+
+.light-mode .projectItem {
+    box-shadow: none;
+}
+
+.light-mode .premium-project {
+    box-shadow: none !important;
+}
+
+.light-mode .premium-project:hover {
+    box-shadow: none !important;
+}
+
+.light-mode .cta-primary {
+    box-shadow: none !important;
+}
+
+.light-mode .cta-primary:hover {
+    box-shadow: none !important;
+}
+
+.light-mode .professional-footer {
+    box-shadow: none !important;
 }
 
 /* === Professional Header === */
