@@ -196,7 +196,49 @@ console.log(ScrollTrigger.getById("example").animation);
         chatbotInput.value = '';
     };
 
+// === Animate Progress Bars ===
+function animateProgressBars() {
+    const progressFills = document.querySelectorAll('.progress-fill');
+    const progressPercentages = document.querySelectorAll('.progress-percentage');
 
+    progressFills.forEach((fill, index) => {
+        const targetWidth = fill.getAttribute('data-width');
+        const percentageElement = progressPercentages[index];
 
+        if (targetWidth && percentageElement) {
+            // Animate width
+            setTimeout(() => {
+                fill.style.width = targetWidth + '%';
+            }, 100);
 
-    
+            // Animate percentage counter
+            let currentPercent = 0;
+            const increment = parseInt(targetWidth) / 40;
+            const counter = setInterval(() => {
+                currentPercent += increment;
+                if (currentPercent >= parseInt(targetWidth)) {
+                    currentPercent = parseInt(targetWidth);
+                    clearInterval(counter);
+                }
+                percentageElement.textContent = Math.floor(currentPercent) + '%';
+            }, 50);
+        }
+    });
+}
+
+// Trigger animation when page loads or when section is visible
+window.addEventListener('load', () => {
+    const codingPlatformsSection = document.getElementById('coding-platforms');
+    if (codingPlatformsSection) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateProgressBars();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+        observer.observe(codingPlatformsSection);
+    }
+});
+
