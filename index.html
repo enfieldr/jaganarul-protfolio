@@ -1356,6 +1356,31 @@ chatbotToggle.onclick = () => {
             window.open(profileUrl, '_blank', 'noopener,noreferrer');
         });
     });
+
+    // WhatsApp Contact Function
+    function sendWhatsApp(event) {
+        event.preventDefault();
+        
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+        
+        // Send via Email
+        const mailtoLink = `mailto:jaganarul179@gmail.com?subject=Message from ${encodeURIComponent(name)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+        window.location.href = mailtoLink;
+        
+        // Send via WhatsApp (opens in new tab without blocking email)
+        setTimeout(() => {
+            const phoneNumber = '8072275209';
+            const whatsappMessage = `Hello! I'm ${name}. My email is ${email}. Message: ${message}`;
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+            window.open(whatsappUrl, '_blank');
+        }, 500);
+        
+        // Reset form
+        document.querySelector('.contact-form').reset();
+    }
     </script>
 
     <!-- ...existing code... -->
@@ -1363,14 +1388,14 @@ chatbotToggle.onclick = () => {
         <!-- Contact Me Section -->
         <section id="contact" style="margin-top:32px;">
             <p class="darkerText headerText">Contact Me</p>
-            <form action="mailto:jaganarul179@gmail.com" method="POST" enctype="text/plain" class="contact-form" style="background:#060505;padding:24px;border-radius:16px;box-shadow:0 4px 24px rgba(34,34,59,0.08);max-width:480px;">
+            <form class="contact-form" style="background:#060505;padding:24px;border-radius:16px;box-shadow:0 4px 24px rgba(34,34,59,0.08);max-width:480px;" onsubmit="sendWhatsApp(event)">
                 <label for="name" style="display:block;margin-bottom:8px;">Name</label>
                 <input type="text" id="name" name="name" required style="width:100%;padding:8px;margin-bottom:16px;border-radius:8px;border:1px solid #ffffff;">
                 <label for="email" style="display:block;margin-bottom:8px;">Email</label>
                 <input type="email" id="email" name="email" required style="width:100%;padding:8px;margin-bottom:16px;border-radius:8px;border:1px solid #ddd;">
                 <label for="message" style="display:block;margin-bottom:8px;">Message</label>
                 <textarea id="message" name="message" rows="4" required style="width:100%;padding:8px;border-radius:8px;border:1px solid #ddd;margin-bottom:16px;"></textarea>
-                <button type="submit" class="linkItem" style="width:100%;">Send Message</button>
+                <button type="submit" class="linkItem" style="width:100%;"><i class="fab fa-whatsapp"></i> Send via WhatsApp</button>
             </form>
         </section>
 
