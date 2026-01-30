@@ -530,10 +530,11 @@ body {
   min-height: 100vh;
   font-family: var(--font-main);
   color: var(--primary-color);
+  background-color: #0f1419;
   background-image: 
-    linear-gradient(-45deg, #080707cc, #1fd8a4cc, #13b88acc, #adf0d4cc),
+    linear-gradient(135deg, rgba(8,7,7,0.5), rgba(31,216,164,0.4), rgba(19,184,138,0.4), rgba(173,240,212,0.3)),
     url('./Background.jpg');
-  background-blend-mode: overlay;
+  background-blend-mode: darken;
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
