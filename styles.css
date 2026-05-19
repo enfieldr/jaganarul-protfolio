@@ -113,7 +113,6 @@
     background: var(--accent4);
     transition: width var(--transition);
 }
-
 .nav-link:hover {
     background: var(--glass-bg);
     color: var(--accent4);
@@ -268,28 +267,30 @@
 }
 
 /* 🌌 Live Gradient Background with Image Overlay */
+html { background-color: #0a0805; } /* safe immediate fallback to avoid white flash */
 body {
-  margin: 0;
-  min-height: 100vh;
-  font-family: var(--font-main);
-  color: var(--primary-color);
-  background-color: #222629;
-  background-image: 
-    linear-gradient(135deg, rgba(34,38,41,0.72), rgba(134,194,50,0.18), rgba(134,194,50,0.12)),
-    url('./Background.jpg');
-  background-blend-mode: darken;
-  background-size: cover;
-  background-position: center center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  animation: gradientShift 12s ease infinite;
-  transition: background var(--transition), color var(--transition);
+    margin: 0;
+    min-height: 100vh;
+    font-family: var(--font-main);
+    color: var(--primary-color);
+    background-color: var(--bg-color, #0a0805);
+    background-image: 
+        linear-gradient(135deg, rgba(34,38,41,0.72), rgba(134,194,50,0.18), rgba(134,194,50,0.12)),
+        url('./Background.jpg');
+    background-blend-mode: darken;
+    background-size: cover;
+    background-position: center center;
+    /* avoid fixed attachment on mobile which can cause white / rendering issues */
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    animation: gradientShift 12s ease infinite;
+    transition: background var(--transition), color var(--transition);
 }
 
 @keyframes gradientShift {
-  0%   { background-position: 0% 50%; }
-  0%  { background-position: 100% 50%; }
-  10% { background-position: 0% 50%; }
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 
@@ -306,14 +307,11 @@ body {
 
 body {
     min-height: 100vh;
-    background: var(--bg-gradient);
     color: var(--primary-color);
     display: flex;
     flex-direction: column;
     gap: 64px;
     padding: 18px 0;
-    background-attachment: fixed;
-    background-size: cover;
 }
 
 /* Smooth scrolling */
@@ -498,9 +496,9 @@ section::before {
 /* Tablet (768px and below) */
 @media (max-width: 768px) {
     .open-to-work-badge {
-        top: -1ff0px;
-        right: -120px;
-        width: 750px;
+        top: -20px;
+        right: -12px;
+        width: 75px;
         height: 75px;
         font-size: 10px;
         gap: 4px;
@@ -1280,6 +1278,98 @@ button {
   transition: all 0.2s;
   cursor: pointer;
 }
+
+/* ===== Additional responsive overrides ===== */
+/* Ensure media scales */
+img, .projectItem img, .imgContainer img, .profile-section img, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Fluid containers and safe paddings */
+header, .header-container, section, main {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+    .projectItem {
+        flex-direction: column !important;
+        align-items: stretch;
+        gap: 18px;
+    }
+
+    .projectItem > div:last-child {
+        max-width: 100% !important;
+        width: 100% !important;
+        aspect-ratio: auto !important;
+        height: auto !important;
+    }
+
+    .about-hero {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: stretch;
+    }
+
+    .profile-section {
+        display: flex;
+        flex-direction: row;
+        gap: 12px;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .header-container {
+        padding: 12px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 12px 8px;
+    }
+
+    section {
+        padding: 20px 12px;
+    }
+
+    .projectItem {
+        padding: 16px;
+        gap: 12px;
+    }
+
+    .nav-link {
+        padding: 6px 8px;
+        font-size: 0.78em;
+    }
+
+    .imgContainer {
+        margin: 0 auto;
+    }
+
+    #chatbot-box {
+        right: 8px !important;
+        left: 8px !important;
+        width: auto !important;
+        max-width: calc(100vw - 16px) !important;
+    }
+}
+
+/* Prevent horizontal overflow */
+html, body { overflow-x: hidden; }
+
+/* Improve touch targets */
+.nav-link, .linkItem, .header-social-link { touch-action: manipulation; }
+
 
 button span {
   display: block;
@@ -4036,6 +4126,7 @@ header, .professional-header, section, .projectItem, .experience-item, .skill-ca
 .logo-text {
     color: #e4ffbe !important;
     background: linear-gradient(135deg, #61892F, #86C232) !important;
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent !important;
 }
