@@ -33,25 +33,6 @@
     --font-main: 'Inter', sans-serif;
   }
 
-  /* === Light Mode Variables === */
-  html.light-mode {
-
-    --primary-color: #070808;
-    --secondary-color: #090a0a;
-     --accent2: #0f0f0ffc;
-     --accent3: #1c1b1b;
-    --bg-color: #f5f3f0;
-    --bg-gradient: linear-gradient(135deg, #f5f3f0 0%, #e8dfd7 35%, #dcc8b8 60%, #e8dfd7 85%, #f5f3f0 100%);
-    --text-color: #1a1410;
-    --heading-color: #cc5500;
-    --card-bg: rgba(220,200,184,0.95);
-    --button-text: #1a1410;
-    --button-gradient: linear-gradient(90deg, #ffb81c 0%, #ff6b1a 100%);
-    --button-hover: linear-gradient(90deg, #ffc41f 0%, #ff7a2a 100%);
-    --button-active: linear-gradient(90deg, #ff6b1a 0%, #cc5500 100%);
-  } 
-
-
   /* === General Styles === */
   body {
     margin: 0;
@@ -127,135 +108,6 @@
    
 
 
-<!-- Classical Switch Theme Toggle -->
-<label class="theme-switch" id="theme-switch" aria-label="Toggle light and dark theme">
-  <input type="checkbox" id="theme-checkbox" />
-  <span class="slider" aria-hidden="true"></span>
-  <span class="switch-label" id="switch-label">Dark</span>
-</label>
-
-<style>
-  /* Container */
-  .theme-switch {
-    position: fixed;
-    top: 16px;
-    right: 16px;
-    z-index: 1000;
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    cursor: pointer;
-    user-select: none;
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    font-size: 14px;
-  }
-
-  /* Hide native checkbox but keep it accessible */
-  .theme-switch input {
-    position: absolute;
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-
-  /* Slider track */
-  .theme-switch .slider {
-    position: relative;
-    width: 48px;
-    height: 26px;
-    background: linear-gradient(180deg, #F0F0F0, #eede9c);
-    border-radius: 999px;
-    box-shadow: inset 0 1px 2px rgba(0,0,0,0.08);
-    transition: background 160ms ease;
-  }
-
-  /* The round knob */
-  .theme-switch .slider::before {
-    content: "";
-    position: absolute;
-    top: 3px;
-    left: 3px;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: rgb(5, 5, 5);
-    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
-    transition: transform 160ms ease;
-  }
-
-  /* Checked state (light mode on) */
-  .theme-switch input:checked + .slider {
-    background: linear-gradient(180deg, #FFDF22, #f95b34);
-  }
-  .theme-switch input:checked + .slider::before {
-    transform: translateX(22px);
-  }
-
-  /* Optional: focus ring for keyboard users */
-  .theme-switch input:focus + .slider {
-    outline: 3px solid rgba(34, 139, 230, 0.18);
-    outline-offset: 2px;
-  }
-
-  /* Label text */
-  .switch-label {
-    min-width: 48px;
-    text-transform: none;
-    color: inherit;
-  }
-
-  /* Light mode class for document (you already use .light-mode) */
-  :root {
-    color-scheme: dark;
-  }
-  .light-mode {
-    color-scheme: light;
-  }
-
-</style>
-
-<script>
-  (function() {
-    const checkbox = document.getElementById('theme-checkbox');
-    const labelText = document.getElementById('switch-label');
-    const html = document.documentElement;
-
-    // Initialize from localStorage
-    const saved = localStorage.getItem('theme');
-    const isLight = saved === 'light';
-    if (isLight) {
-      html.classList.add('light-mode');
-      checkbox.checked = true;
-      labelText.textContent = 'Light';
-    } else {
-      html.classList.remove('light-mode');
-      checkbox.checked = false;
-      labelText.textContent = 'Dark';
-    }
-
-    // Toggle handler
-    checkbox.addEventListener('change', () => {
-      const nowLight = checkbox.checked;
-      html.classList.toggle('light-mode', nowLight);
-      labelText.textContent = nowLight ? 'Light' : 'Dark';
-      localStorage.setItem('theme', nowLight ? 'light' : 'dark');
-    });
-
-    // Allow clicking the whole label to toggle (native behavior already covers this)
-    // Accessibility: expose state via aria-checked on the root element
-    const rootLabel = document.getElementById('theme-switch');
-    function updateAria() {
-      rootLabel.setAttribute('aria-checked', checkbox.checked ? 'true' : 'false');
-    }
-    checkbox.addEventListener('change', updateAria);
-    updateAria();
-  })();
-</script>
-
-</head>
-
-
-<body>
     <!-- Professional Header -->
     <header class="professional-header">
         <div class="header-container">
@@ -403,11 +255,25 @@
                 </div>
                 
                 <div class="skill-category">
-                    <h3><i class="fa-solid fa-globe"></i> Frontend & Web</h3>
+                    <h3><i class="fa-solid fa-globe"></i> Full Stack Development</h3>
                     <div class="skill-tags">
                         <span class="skill-tag proficient">HTML5</span>
                         <span class="skill-tag proficient">CSS</span>
                         <span class="skill-tag proficient">JavaScript</span>
+                        <span class="skill-tag proficient">PHP</span>
+                        <span class="skill-tag proficient">SQL</span>
+                        <span class="skill-tag proficient">Java</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fa-solid fa-bullhorn"></i> Digital Marketing</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag expert">SEO</span>
+                        <span class="skill-tag expert">Meta Ads</span>
+                        <span class="skill-tag proficient">PPC</span>
+                        <span class="skill-tag proficient">Email Marketing</span>
+                        <span class="skill-tag proficient">Affiliate marketing</span>
                     </div>
                 </div>
                 
@@ -1440,7 +1306,6 @@ chatbotToggle.onclick = () => {
             <div class="footer-divider"></div>
             <div class="footer-bottom">
                 <p class="footer-text">&copy; 2025 Jaganarul. All rights reserved.</p>
-                <p class="footer-text">Crafted with <span class="heart">❤</span> using HTML, CSS & JavaScript</p>
             </div>
         </div>
     </footer>
